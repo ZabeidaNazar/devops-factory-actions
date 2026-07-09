@@ -1,0 +1,13 @@
+name: Task 1
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echoing
+        run: echo Hello, GitHub Actions!
