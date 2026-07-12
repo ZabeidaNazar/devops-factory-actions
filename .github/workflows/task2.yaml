@@ -6,10 +6,6 @@ on:
   pull_request:
     branches: ["develop"]
 
-permissions:
-  contents: read
-  code-quality: write
-
 jobs:
   tests-and-coverage:
     runs-on: ubuntu-latest
@@ -17,8 +13,6 @@ jobs:
     steps:
       - name: Cloning repository
         uses: actions/checkout@v6
-        with:
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -47,11 +41,3 @@ jobs:
           name: pytest-results
           path: reports/
         if: always()
-
-      - name: Upload Cobertura coverage report
-        if: always() && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
-        uses: actions/upload-code-coverage@v1
-        with:
-          file: reports/results.xml
-          language: Python
-          label: code-coverage/pytest
