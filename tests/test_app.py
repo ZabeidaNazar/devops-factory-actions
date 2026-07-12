@@ -1,11 +1,14 @@
 import pytest
-from myapp.app import add, substruct, divide
+from myapp.app import add, substruct, multiply, divide, power
 
 def test_add():
     assert add(2, 3) == 5
 
 def test_substruct():
     assert substruct(5, 3) == 2
+
+def test_multiply():
+    assert multiply(5, 3) == 15
 
 @pytest.mark.parametrize(
     "a,b,expected",
@@ -23,3 +26,16 @@ def test_divide(a, b, expected):
 def test_divide_0():
     with pytest.raises(ZeroDivisionError):
         divide(9, 0)
+
+@pytest.mark.parametrize(
+    "a,b,expected",
+    [
+        (3, 3, 27),
+        (2, 3, 8),
+        (3, 0, 1),
+        (0, 7, 0),
+        (4, 2, 16),
+    ]
+)
+def test_power(a, b, expected):
+    assert power(a, b) == expected
