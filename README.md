@@ -34,3 +34,13 @@ git push origin +main
 - Результат:
 ![task 1 - success](img/task1_success.png)
 
+## Task 2 **: Add Unit Testing with Coverage ≥70%
+1. Add the provided Python application (myapp/app.py) and write two functions:
+    1. add(a, b) that adds two numbers.
+    2. subtract(a, b) that subtracts the second number from the first.
+2. Create a test suite (tests/test_app.py) using pytest. Ensure the tests cover at least 70% of the code.
+3. Update the workflow to:
+    1. Install dependencies from requirements.txt.
+    2. Run the tests with pytest and fail the workflow if coverage is below 70%.
+    3. Upload a coverage report as an artifact for inspection.
+4. Create a pull request to the develop branch and verify the workflow.
