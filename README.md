@@ -1,6 +1,6 @@
 # ДЗ - GitHub Actions
 
-<!-- BADGE -->
+[![Build Status](https://github.com/ZabeidaNazar/devops-factory-actions/actions/workflows/task3.yaml/badge.svg)](https://github.com/ZabeidaNazar/devops-factory-actions/actions)
 
 ## Task 1 *: Create a Basic GitHub Actions Workflow
 1. Create a new GitHub repository.
