@@ -76,7 +76,7 @@ jobs:
 
       - name: Update README with Badge
         run: |
-          BADGE="[![Build Status](https://github.com/${{ github.repository }}/actions/workflows/task3.yaml/badge.svg?branch=develop)](https://github.com/${{ github.repository }}/actions)"
+          BADGE="[![Build Status](https://github.com/${{ github.repository }}/actions/workflows/task3.yaml/badge.svg)](https://github.com/${{ github.repository }}/actions)"
 
           sed -i "s|<!-- BADGE -->|$BADGE|" README.md
 
@@ -87,7 +87,7 @@ jobs:
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
             git add README.md
-            git commit -m "change build status badge"
+            git commit -m "change build status badge [skip ci]"
 
             git push origin HEAD:${{ github.head_ref }}
           else
