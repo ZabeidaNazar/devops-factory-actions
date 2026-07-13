@@ -1,5 +1,7 @@
 # ДЗ - GitHub Actions
 
+<!-- BADGE -->
+
 ## Task 1 *: Create a Basic GitHub Actions Workflow
 1. Create a new GitHub repository.
 - Створено новий репозиторій:

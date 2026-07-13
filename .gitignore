@@ -2,3 +2,5 @@ __pycache__/
 .venv/
 .coverage
 reports/
+dist/
+*.egg-info/
