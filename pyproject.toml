@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools >= 83.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "myapp"
+version = "0.1.0"
+description = "A simple math operations app"
+requires-python = ">=3.10"
+
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "build==1.5.1"
+]
+test = [
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0"
+]
+
+[tool.setuptools]
+packages = ["myapp"]
