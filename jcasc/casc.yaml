@@ -1,0 +1,35 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: ${JENKINS_ADMIN_ID}
+          password: ${JENKINS_ADMIN_PASSWORD}
+        - id: developer
+          password: ${JENKINS_DEVELOPER_PASSWORD}
+  authorizationStrategy:
+    projectMatrix:
+      entries:
+        - user:
+            name: ${JENKINS_ADMIN_ID}
+            permissions:
+              - Overall/Administer
+        - user:
+            name: developer
+            permissions:
+              - Overall/Read
+              - Job/Build
+
+unclassified:
+  location:
+    url: http://${JENKINS_URL}/
+
+tool:
+  terraform:
+    installations:
+      - name: "terraform-1.15.8"
+        properties:
+          - installSource:
+              installers:
+                - terraformInstaller:
+                    id: "1.15.8-linux-amd64"
